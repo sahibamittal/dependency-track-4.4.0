@@ -82,7 +82,7 @@
     <properties>
         <!-- Dependency Versions -->
         <frontend.version>4.4.0</frontend.version>
-        <lib.alpine.version>${project.parent.version}</lib.alpine.version>
+        <lib.alpine.version>1.10.5</lib.alpine.version>
         <lib.cpe-parser.version>2.0.2</lib.cpe-parser.version>
         <lib.cvss-calculator.version>1.4.1</lib.cvss-calculator.version>
         <lib.cyclonedx-java.version>6.0.0</lib.cyclonedx-java.version>
