@@ -44,5 +44,21 @@ jobs:
         mvn clean -P clean-exclude-wars
         mvn package -Dmaven.test.skip=true -P embedded-jetty -P bundle-ui -Dlogback.configuration.file=src/main/docker/logback.xml
         mvn clean -P clean-exclude-wars
-        mvn run compile
         mvn -P enhance jetty:run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
