@@ -117,6 +117,15 @@ public class Policy implements Serializable {
     private List<Project> projects;
 
     /**
+     * A list of zero-to-n tags
+     */
+    @Persistent(table = "POLICY_TAGS", defaultFetchGroup = "true")
+    @Join(column = "POLICY_ID")
+    @Element(column = "TAG_ID")
+    @Order(extensions = @Extension(vendorName = "datanucleus", key = "list-ordering", value = "name ASC"))
+    private List<Tag> tags;
+
+    /**
      * The unique identifier of the object.
      */
     @Persistent(customValueStrategy = "uuid")
@@ -182,6 +191,14 @@ public class Policy implements Serializable {
 
     public boolean isGlobal() {
         return (projects == null || projects.size() == 0);
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
     public UUID getUuid() {
