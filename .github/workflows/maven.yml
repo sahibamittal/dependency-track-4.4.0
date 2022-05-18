@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKER_APISERVER_REPO: dependencytrack/apiserver
-      DOCKER_BUNDLED_REPO: dependencytrack/bundled
+      DOCKER_APISERVER_REPO: sahibamittal/apiserver
+      DOCKER_BUNDLED_REPO: sahibamittal/bundled
       DOCKER_TAG: snapshot
 
     steps:
@@ -65,8 +65,8 @@ jobs:
     - name: Logging into Docker Hub
       if: github.ref == 'refs/heads/master'
       env:
-        HUB_USERNAME: sahibamittal
-        HUB_ACCESSS_TOKEN: ff467ef6-6142-494c-ab4f-25105f592d2f
+        HUB_USERNAME: ${{ secrets.HUB_USERNAME }}
+        HUB_ACCESSS_TOKEN: ${{ secrets.HUB_ACCESSS_TOKEN }}
       run: docker login -u "${HUB_USERNAME}" -p "${HUB_ACCESSS_TOKEN}"
 
     - name: Building Docker API Server container
